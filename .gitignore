@@ -1,0 +1,30 @@
+# .gitignore - Protect sensitive data
+
+# Server credentials and configs
+server-credentials.txt
+*.key
+*.pem
+*.crt
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# Build artifacts
+*.o
+*.so
+*.a
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace

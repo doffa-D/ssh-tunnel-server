@@ -1,0 +1,18 @@
+[Unit]
+Description=WebSocket to SSH Tunnel Proxy
+After=network.target dropbear.service
+Requires=dropbear.service
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/local/bin/fastproxy
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+LimitNOFILE=1048576
+LimitNPROC=65535
+
+[Install]
+WantedBy=multi-user.target

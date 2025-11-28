@@ -1,0 +1,20 @@
+# Dropbear SSH Server Configuration
+# File: /etc/default/dropbear
+# 
+# This configuration optimizes Dropbear for high-speed SSH tunneling
+# with HTTP Custom Android app
+
+# Start Dropbear on boot
+NO_START=0
+
+# Listen on port 109 (non-standard port for tunneling)
+DROPBEAR_PORT=109
+
+# Performance optimizations:
+# -W 1048576: Set receive window to 1MB (default is ~24KB)
+#             This dramatically improves speed on high-latency connections
+# -K 60: Send keepalive every 60 seconds to prevent idle disconnects
+DROPBEAR_EXTRA_ARGS="-W 1048576 -K 60"
+
+# Disable banner for cleaner connections
+DROPBEAR_BANNER=""
